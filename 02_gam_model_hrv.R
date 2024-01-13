@@ -20,7 +20,7 @@ summary(gam.model <- gam(HRV.NN50 ~
     s(HR.M) +
     s(TrialOrder.z, ID, bs='fs', m=1),
     method='ML',
-    data = brmdat))
+    data = gamdat))
 # Parametric coefficients:
 #                 Estimate Std. Error t value Pr(>|t|)
 # (Intercept)     -0.02767    0.14973  -0.185   0.8534
@@ -47,7 +47,7 @@ summary(gam.model.t <- gam(HRV.NN50 ~
     s(HR.M) +
     s(TrialOrder.z, ID, bs='fs', m=1),
     method='ML',
-    data = brmdat,
+    data = gamdat,
     subset=abs(scale(resid(gam.model)))<2.5))
 # Parametric coefficients:
 #                 Estimate Std. Error t value Pr(>|t|)
